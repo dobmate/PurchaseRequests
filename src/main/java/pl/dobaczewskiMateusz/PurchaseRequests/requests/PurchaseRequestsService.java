@@ -30,6 +30,10 @@ public class PurchaseRequestsService {
             purchaseRequestsRepository.deleteById(id);
         }
     }
+    public Optional<PurchaseRequests> getPRById(Long id) {
+        Optional<PurchaseRequests> byId = purchaseRequestsRepository.findById(id);
+        return byId;
+    }
 
     public List<PurchaseRequests> getPRs(){
         List<PurchaseRequests> prList = purchaseRequestsRepository.findAll();

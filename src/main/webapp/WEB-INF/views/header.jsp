@@ -7,7 +7,7 @@
   <nav>
     <div>
       <h4>Użytkownik ${user.name}</h4>
-      <a href="/logout">Wyloguj ${user.name}</a>
+      <a href="/logout">Kliknij aby wylogować ${user.name}</a>
     </div>
   </nav>
 </header>

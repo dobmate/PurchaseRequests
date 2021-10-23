@@ -18,8 +18,15 @@
 </div>
 <div>
     <div>
-        <p>Wniosek zakupowy</p>
-        <p>Poniżej jest lista wnioów zakupowych</p>
+        <p>Poniżej jest lista wniosków zakupowych</p>
+        <table>
+
+            <c:forEach items="${pr}" var="pr">
+                <tr>
+                    <td>${pr.indication}</td>
+                </tr>
+            </c:forEach>
+        </table>
         <p>Proszę wprowadzić niezbędne informacje:
         <li>Poprawna data</li>
         <li>Produkty </li>

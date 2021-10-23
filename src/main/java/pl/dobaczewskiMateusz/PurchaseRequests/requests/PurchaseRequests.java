@@ -4,6 +4,7 @@ import lombok.Data;
 import pl.dobaczewskiMateusz.PurchaseRequests.orders.Order;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
@@ -13,6 +14,9 @@ public class PurchaseRequests {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 2, max = 50)
+    private String indication;
+
     @OneToMany
-    private List<Order> dayList;
+    private List<Order> orderList;
 }

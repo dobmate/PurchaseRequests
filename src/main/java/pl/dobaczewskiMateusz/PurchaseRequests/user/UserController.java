@@ -41,9 +41,9 @@ public class UserController {
     @GetMapping("/user/dashboard")
     public String dashboard(Model model, Principal principal) {
         User user = userServiceImpl.findByUsername(principal.getName());
-        List<PurchaseRequests> acd = user.getPurchaseRequests();
+        List<PurchaseRequests> pr = user.getPurchaseRequests();
         model.addAttribute("user", user);
-        model.addAttribute("acd", acd);
+        model.addAttribute("pr", pr);
         return "dashboard";
     }
 
