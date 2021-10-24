@@ -26,8 +26,9 @@
   <c:forEach items="${purchaseRequests}" var="pr">
     <tr>
       <td>${pr.indication}</td>
-      <td><a href="/user/editPR/${pr.id}">edytuj</a></td>
-      <td><a href="/user/deletePR/${pr.id}">usuń</a></td>
+      <td><a href="/user/editPR/${pr.id}">Zmień nr indeksu</a></td>
+      <td><a href="/user/add/item/${pr.id}">Dodaj produkty</a></td>
+      <td><a href="/user/deletePR/${pr.id}">Usuń</a></td>
     </tr>
   </c:forEach>
 </table>

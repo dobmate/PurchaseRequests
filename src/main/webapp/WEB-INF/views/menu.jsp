@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <section class="dashboard-section">
+  <hr/>
   <div>
     <ul>
       <li><a href="/user/dashboard">Strona Główna</a></li>
@@ -11,6 +12,6 @@
     </ul>
   </div>
   <hr/>
-  <hr/>
+
 
 </section>

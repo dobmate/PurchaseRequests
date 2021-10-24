@@ -18,7 +18,9 @@
 </div>
 <div>
     <div>
+        <h3>
         <p>Poniżej jest lista wniosków zakupowych</p>
+        </h3>
         <table>
 
             <c:forEach items="${pr}" var="pr">
@@ -27,6 +29,7 @@
                 </tr>
             </c:forEach>
         </table>
+        <hr/>
         <p>Proszę wprowadzić niezbędne informacje:
         <li>Poprawna data</li>
         <li>Produkty </li>

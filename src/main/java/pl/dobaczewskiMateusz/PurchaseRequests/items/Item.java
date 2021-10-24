@@ -2,6 +2,8 @@ package pl.dobaczewskiMateusz.PurchaseRequests.items;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import pl.dobaczewskiMateusz.PurchaseRequests.requests.PurchaseRequests;
 
 import javax.persistence.*;
 
@@ -17,6 +19,11 @@ public class Item {
     private String title;
 
     private String description;
+
+    private Integer quantity;
+
+    @ManyToOne
+    private PurchaseRequests purchaseRequests;
 
 
 

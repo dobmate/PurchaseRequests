@@ -8,6 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import pl.dobaczewskiMateusz.PurchaseRequests.items.Item;
+import pl.dobaczewskiMateusz.PurchaseRequests.items.ItemService;
 import pl.dobaczewskiMateusz.PurchaseRequests.user.User;
 import pl.dobaczewskiMateusz.PurchaseRequests.user.UserServiceImpl;
 
@@ -22,12 +24,15 @@ import java.util.Optional;
 public class PurchaseRequestsController {
     private final UserServiceImpl userServiceImpl;
     private final PurchaseRequestsService purchaseRequestsService;
+    private final ItemService itemService;
 
     @GetMapping("user/add/pr")
     public String addPRForm(Model model) {
+        log.getName();
         model.addAttribute("pr", new PurchaseRequests());
         return "addPRForm";
     }
+
 
     @PostMapping("/user/add/pr")
     public String addPR(@Valid PurchaseRequests purchaseRequests, BindingResult result, Principal principal, Model model) {
@@ -71,4 +76,13 @@ public class PurchaseRequestsController {
         return "prList";
     }
 
-}
+    @GetMapping("user/deletePR/{id}")
+    public String deletePR(@PathVariable Long id, Model model) {
+        purchaseRequestsService.deletePR(id);
+        List<PurchaseRequests> purchaseRequests = purchaseRequestsService.getPRs();
+        model.addAttribute("purchaseRequests", purchaseRequests);
+        return "dashboard";
+
+    }
+
+    }
